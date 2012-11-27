@@ -23,6 +23,7 @@ function SetIndentation()
   let has_tabs = HasLeadingChar("\t")
 
   if has_spaces
+    set et
     if has_tabs
       echom "dafuq? in this file: some weird mixed spaces tabs shit"
     endif
