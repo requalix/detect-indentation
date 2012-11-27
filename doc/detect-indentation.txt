@@ -1,0 +1,2 @@
+No documentation, things should just work. Feel free to submit a pull
+request.
