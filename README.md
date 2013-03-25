@@ -8,11 +8,17 @@ but there are leading tabs, it sets noexpandtab.
 
 ## Installation
 
-  1. Install [Pathogen](https://github.com/tpope/vim-pathogen) (just copy and paste some stuff)
-  2. Copy and paste this:
+Copy and paste:
 
-        cd ~/.vim/bundle
-        git clone https://github.com/requalix/detect-indentation.git
+  mkdir -p ~/.vim/autoload ~/.vim/bundle; \
+    curl -Sso ~/.vim/autoload/pathogen.vim \
+    https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+  cd ~/.vim/bundle
+  git clone https://github.com/requalix/detect-indentation.git
+
+Add this to ~/.vimrc (ignore if you already have pathogen installed):
+
+  execute pathogen#infect()
 
 ## Updating
 
