@@ -15,10 +15,14 @@ Copy and paste:
         https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
     cd ~/.vim/bundle
     git clone https://github.com/requalix/detect-indentation.git
+    grep -q pathogen ~/.vimrc || echo 'call pathogen#infect()' >> ~/.vimrc
 
-Add this to ~/.vimrc (ignore if you already have pathogen installed):
+## Setting defaults
 
-    execute pathogen#infect()
+Simply put them in your vimrc as usual, anywhere before the line with
+`call pathogen#infect()`. The relevant settings are:
+
+    set et sw=4 ts=4 sts=4
 
 ## Updating
 
