@@ -18,14 +18,27 @@ function MinNumSpaces()
   return min_num_spaces
 endfunction
 
+let s:fuck_with_ruler_format = 0
+if &rulerformat == ""
+  let s:fuck_with_ruler_format = 1
+end
+
 function SetIndentation()
   let has_spaces = HasLeadingChar(" ")
   let has_tabs = HasLeadingChar("\t")
 
+  if s:fuck_with_ruler_format
+    set rulerformat=%l,%c%V%=%P
+  end
+
   if has_spaces
     set et
     if has_tabs
-      echom "dafuq? in this file: some weird mixed spaces tabs shit"
+      if s:fuck_with_ruler_format
+        set rulerformat=%25(^[\\t\ ]\ \ %l,%c%V%=%P%)
+      else
+        echom "Some weird spaces and tabs shit going on in this file"
+      end
     endif
     let num_spaces = MinNumSpaces()
     let &sw = num_spaces
@@ -37,4 +50,4 @@ function SetIndentation()
 endfunction
 
 autocmd BufEnter * call SetIndentation()
-autocmd BufReadPost * call SetIndentation()
+" autocmd BufReadPost * call SetIndentation()
