@@ -10,15 +10,15 @@ but there are leading tabs, it sets noexpandtab.
 
 Copy and paste:
 
-  mkdir -p ~/.vim/autoload ~/.vim/bundle; \
-    curl -Sso ~/.vim/autoload/pathogen.vim \
-    https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
-  cd ~/.vim/bundle
-  git clone https://github.com/requalix/detect-indentation.git
+    mkdir -p ~/.vim/autoload ~/.vim/bundle; \
+        curl -Sso ~/.vim/autoload/pathogen.vim \
+        https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+    cd ~/.vim/bundle
+    git clone https://github.com/requalix/detect-indentation.git
 
 Add this to ~/.vimrc (ignore if you already have pathogen installed):
 
-  execute pathogen#infect()
+    execute pathogen#infect()
 
 ## Updating
 
