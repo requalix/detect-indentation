@@ -11,7 +11,7 @@ function MinNumSpaces()
   let min_num_spaces = 8
   for line in getline(0, 100)
     let num_spaces = strlen(matchstr(line, '^ *'))
-    if num_spaces && num_spaces < min_num_spaces
+    if num_spaces >= 2 && num_spaces < min_num_spaces
       let min_num_spaces = num_spaces
     endif
   endfor
